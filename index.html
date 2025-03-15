@@ -1,10 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Document</title>
-    <link rel="stylesheet" href="./output.css">
-</head>
-<body>
-    
-</body>
+  <head>
+    <title>Desktop Figma Design</title>
+    <link rel="stylesheet" href="./output.css" />
+  </head>
+  <body>
+    <nav class="flex justify-around p-4 items-center">
+      <div class="brand-logo flex items-center">
+        <img
+          src="./images/logo-symbol@2x.png"
+          alt="logo"
+          class="w-[38px] h-[40px]"
+        />
+        <h1 class="text-blue-400 font-bold text-2xl">Brand</h1>
+      </div>
+      <div class="flex items-center">
+        <input
+          type="text"
+          placeholder="Search"
+          class="border-[2px] focus:outline-none focus:ring-1 w-[421px] focus:ring-blue-200 focus:border-blue-600 transition-all duration-200 rounded-l-[5px] py-2 pl-1 border-blue-500"
+        />
+        <details class="relative group">
+          <summary
+            class="border-[2px] py-2.5 px-4 inline-flex border-l-0 border-r-0 items-center gap-x-2 text-sm font-medium border-blue-500 bg-white text-gray-800 shadow-md hover:bg-gray-50 cursor-pointer"
+          >
+            All Category
+            <svg
+              class="size-4 text-gray-600 transition-transform group-open:rotate-180"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </summary>
+
+          <div
+            class="absolute z-10 mt-2 min-w-60 bg-white shadow-md rounded-lg p-2 border border-gray-200"
+          >
+            <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+              >Men's</a
+            >
+            <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+              >Mobile Phones</a
+            >
+            <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+              >Watches</a
+            >
+            <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+              >Home Appliances</a
+            >
+          </div>
+        </details>
+        <button
+          class="text-white py-2.5 w-30 rounded-r-[5px] bg-blue-500 hover:bg-blue-700 border-blue-500"
+        >
+          Search
+        </button>
+      </div>
+      <div class="gap-4 items-center text-center">
+        <ul class="flex space-x-5">
+          <div class="text-gray-500">
+            <a href="">
+              <img src="./images/nav img1.png" alt="logo" class="ml-3" />
+              <li class="mt-1">Profile</li>
+            </a>
+          </div>
+          <div>
+            <a href="">
+              <img src="./images/nav img2.png" alt="logo" class="ml-5" />
+              <li class="mt-1 text-gray-500">Message</li>
+            </a>
+          </div>
+          <div>
+            <a href="">
+              <img src="./images/nav img3.png" alt="logo" class="ml-2.5" />
+              <li class="text-gray-500 mt-1.5">Orders</li>
+            </a>
+          </div>
+          <div>
+            <a href="">
+              <img src="./images/nav img4.png" alt="logo" class="ml-2.5" />
+              <li class="text-gray-500 mt-1">My Cart</li>
+            </a>
+          </div>
+        </ul>
+      </div>
+    </nav>
+    <footer>
+      <div class="m-8 flex border-red-500 justify-between">
+        <div>
+          <div class="flex items-center">
+            <img
+              src="images/logo-symbol@2x.png"
+              alt="logo"
+              class="w-[44px] h-[44px]"
+            />
+            <h1 class="font-bold text-blue-400 text-2xl pl-2">Brand</h1>
+          </div>
+          <p class="mt-4 text-gray-500">
+            Best information about the company<br />given here.Follow us on
+          </p>
+          <div class="flex mt-5 space-x-1">
+            <a href=""><img src="./images/facebook3.png" alt="logo" /></a>
+            <a href=""><img src="./images/twitter3.png" alt="logo" /></a>
+            <a href=""><img src="./images/linkedin3.png" alt="logo" /></a>
+            <a href=""><img src="./images/instagram3.png" alt="logo" /></a>
+            <a href=""><img src="./images/youtube3.png" alt="logo" /></a>
+          </div>
+        </div>
+        <div class="flex space-x-16 p-2 mt-2.5">
+          <div class="space-y-2">
+            <div>
+              <h1 class="text-[18px] font-medium">About</h1>
+            </div>
+            <div class="text-gray-500 space-y-1.5">
+              <a href="" class="block">About Us</a>
+              <a href="" class="block">Find Store</a>
+              <a href="" class="block">Categories</a>
+              <a href="" class="block">Blogs</a>
+            </div>
+          </div>
+          <div class="space-y-2">
+            <div>
+              <h1 class="font-medium text-[18px]">Partnership</h1>
+            </div>
+            <div class="text-gray-500 space-y-1.5">
+              <a href="" class="block">About Us</a>
+              <a href="" class="block">Find Store</a>
+              <a href="" class="block">Categories</a>
+              <a href="" class="block">Blogs</a>
+            </div>
+          </div>
+          <div class="space-y-2">
+            <div>
+              <h1 class="text-[18px] font-medium">Information</h1>
+            </div>
+            <div class="text-gray-500 space-y-1.5">
+              <a href="" class="block">Help Center</a>
+              <a href="" class="block">Money Refund</a>
+              <a href="" class="block">Shipping</a>
+              <a href="" class="block">Contact Us</a>
+            </div>
+          </div>
+          <div class="space-y-2">
+            <div>
+              <h1 class="text-[18px] font-medium">For Users</h1>
+            </div>
+            <div class="text-gray-500 space-y-1.5">
+              <a href="" class="block">Login</a>
+              <a href="" class="block">Register</a>
+              <a href="" class="block">Setting</a>
+              <a href="" class="block">My Oreders</a>
+            </div>
+          </div>
+        </div>
+        <div class="mr-10 mt-5">
+          <div class="space-y-2">
+            <h1 class="font-medium text-[18px] space-y-1">Get app</h1>
+            <img src="./images/market-button.png" alt="logo" />
+            <img src="./images/Group.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="bg-gray-100 h-[68px] flex justify-around items-center">
+      <div class="text-gray-500">
+        <p>©2025 Ecommerce</p>
+      </div>
+      <div><img src="./images/Group 986.png" alt="" /></div>
+    </div>
+  </body>
 </html>
