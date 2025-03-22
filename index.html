@@ -3,9 +3,11 @@
   <head>
     <title>Desktop Figma Design</title>
     <link rel="stylesheet" href="./output.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
   </head>
-  <body>
-    <nav class="flex justify-around p-4 items-center">
+  <body class="bg-blue-50" >
+    <nav class="flex bg-white justify-around p-4 items-center">
       <div class="brand-logo flex items-center">
         <img
           src="./images/logo-symbol@2x.png"
@@ -91,7 +93,695 @@
         </ul>
       </div>
     </nav>
-    <footer>
+      <nav class="border-b-2 bg-white mb-4 p-4">
+        <div class="container mx-auto flex justify-center items-center">
+
+            <!-- Hamburger Icon (Always Visible) -->
+             <div>
+            <button id="menu-btn" class="text-black text-2xl focus:outline-none">
+                ☰
+            </button>
+            </div>
+
+            <!-- Desktop Menu (Always Visible on Desktop) -->
+             <div class="">
+            <ul class="hidden md:flex space-x-4 text-black font-medium">
+                <li><a href="#">All Category</a></li>
+                <li><a href="#">Hot Offers</a></li>
+                <li><a href="#">Gift Boxes</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Menu Item</a></li>
+                <details class="relative group">
+                  <summary
+                    class=" inline-flex border-l-0 border-r-0 items-center  font-medium  text-black  cursor-pointer"
+                  >
+                    Help
+                    <svg
+                      class="size-4 text-gray-800 transition-transform group-open:rotate-180"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="m6 9 6 6 6-6"></path>
+                    </svg>
+                  </summary>
+            </ul>
+        </div>
+
+        <!-- Mobile Menu (Hidden by Default, Shows on Click) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-blue-600 text-black p-4">
+            <a href="#" class="block py-2">Home</a>
+            <a href="#" class="block py-2">About</a>
+            <a href="#" class="block py-2">Services</a>
+            <a href="#" class="block py-2">Contact</a>
+        </div>
+        <div class="relative inline-block ml-70">
+          <!-- Dropdown Button -->
+           <div>
+          <button id="dropdown-btn" class="flex items-center justify-between  text-black font-medium py-2 rounded-md w-full focus:outline-none">
+              <span id="selected-country">United States - USD</span>
+              <svg id="arrow-icon" class=" h-5 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+          </button>
+          </div>
+  
+          <!-- Dropdown Menu -->
+          <ul id="dropdown-menu" class="hidden absolute left-0 mt-2 w-full bg-white border rounded-lg shadow-lg text-gray-800">
+              <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer" data-value="United States - USD">🇺🇸 United States - USD</li>
+              <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer" data-value="United Kingdom - GBP">🇬🇧 United Kingdom - GBP</li>
+              <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer" data-value="India - INR">🇮🇳 India - INR</li>
+              <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer" data-value="European Union - EUR">🇪🇺 European Union - EUR</li>
+              <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer" data-value="Japan - JPY">🇯🇵 Japan - JPY</li>
+              <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer" data-value="Australia - AUD">🇦🇺 Australia - AUD</li>
+          </ul>
+      </div>
+      <div class="relative inline-block ml-20 w-16">
+        <button id="ship-btn" class="flex items-center justify-between text-black font-medium px-1 py-2 rounded-md w-full focus:outline-none">
+            <span id="selected-flag" class="flag whitespace-nowrap">ship to</span>
+            <svg id="ship-arrow" class="w-5 h-5 transition-transform transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M19 9l-7 7-7-7"></path>
+            </svg>
+        </button>
+        <ul id="ship-menu" class="dropdown-menu hidden absolute left-0 mt-2 w-full bg-white border rounded-lg shadow-lg text-center">
+            <li class="px-2 py-1 hover:bg-gray-200 cursor-pointer flag" data-value="🇺🇸">🇺🇸</li>
+            <li class="px-2 py-1 hover:bg-gray-200 cursor-pointer flag" data-value="🇬🇧">🇬🇧</li>
+            <li class="px-2 py-1 hover:bg-gray-200 cursor-pointer flag" data-value="🇮🇳">🇮🇳</li>
+            <li class="px-2 py-1 hover:bg-gray-200 cursor-pointer flag" data-value="🇪🇺">🇪🇺</li>
+            <li class="px-2 py-1 hover:bg-gray-200 cursor-pointer flag" data-value="🇯🇵">🇯🇵</li>
+            <li class="px-2 py-1 hover:bg-gray-200 cursor-pointer flag" data-value="🇦🇺">🇦🇺</li>
+        </ul>
+    </div>
+      </div>
+    </nav>
+    <div class=" w-[1180px] border-2 rounded-md h-[400px] flex justify-center items-center mx-auto bg-white ">
+     <div class="w-[250px] h-[360px] flex flex-col justify-between">
+      <h1 class="font-bold hover:bg-blue-200 rounded-lg w-[240px] pl-1.5 flex  flex-col justify-center  h-[40px] mx-auto"><a href="">Automobiles</a></h1>
+      <ul class="text-gray-700 flex flex-col  ">
+        <li><a href="" class="hover:bg-blue-200 flex flex-col justify-center w-[250px] h-[40px] rounded-lg pl-1 mx-auto ">Clothes and Wears</a></li>
+        <li><a href="" class="hover:bg-blue-200 flex flex-col justify-center w-[250px] h-[40px] rounded-lg pl-1 mx-auto">Home interiors</a></li>
+        <li><a href="" class="hover:bg-blue-200 flex flex-col justify-center w-[250px] h-[40px] rounded-lg pl-1 mx-auto">Computer and tech</a></li>
+        <li><a href="" class="hover:bg-blue-200 flex flex-col justify-center w-[250px] h-[40px] rounded-lg pl-1 mx-auto">Tools and equipments</a></li>
+        <li><a href="" class="hover:bg-blue-200 flex flex-col justify-center w-[250px] h-[40px] rounded-lg pl-1 mx-auto">Sports and outdoor</a></li>
+        <li><a href="" class="hover:bg-blue-200 flex flex-col justify-center w-[250px] h-[40px] rounded-lg pl-1 mx-auto">Animal and pets</a></li>
+        <li><a href="" class="hover:bg-blue-200 flex flex-col justify-center w-[250px] h-[40px] rounded-lg pl-1 mx-auto">Machinery tools</a></li>
+        <li><a href="" class="hover:bg-blue-200 flex flex-col justify-center w-[250px] h-[40px] rounded-lg pl-1 mx-auto">More Category</a></li>
+      </ul>
+     </div>
+     <div class=" flex flex-col justify-center w-[665px] h-[360px]">
+      <div class="absolute flex flex-col pl-10 pb-24 ">
+        <h1 class=" text-3xl">Latest Trending</h1>
+        <h2 class="text-4xl font-bold">Electronic items</h2>
+        <button class="bg-white rounded-md hover:bg-black hover:text-amber-50 w-[180px] h-[35px] mt-16 ml-[70px]">Learn More</button>
+        </div>
+      <img src="./images/Mask group.png" alt="logo">
+     </div>
+     <div class=" flex flex-col justify-center items-center w-[230px] h-[360px]">
+      <div class="  w-[200px] h-[150px] bg-blue-100 rounded-lg">
+        <div class="flex justify-evenly mt-3">
+        <img src="./images/Avatar.png" alt="logo" class="w-[44px] h-[44px]">
+        <h1>Hi, user <br> let's get started</h1>
+        </div>
+        <button class="block  mt-2 mx-auto w-[180px] h-[30px] rounded-md text-white bg-blue-600 hover:bg-blue-700">Join Now</button>
+        <button class="block bg-white hover:bg-blue-200 text-blue-600 w-[180px] h-[30px] mt-2 mx-auto rounded-md">Log in</button>
+      </div>
+      <div class="w-[200px] h-[95px] flex flex-col justify-center pl-5 text-white mt-2  bg-orange-500 rounded-lg hover:bg-orange-600">
+        <p>Get US $10 Off</p>
+        <p>with a new </p>
+        <p>supplier</p>
+      </div>
+      <div class="w-[200px] h-[95px] text-white flex flex-col justify-center bg-blue-300 pl-5 mt-2 rounded-lg hover:bg-blue-500">
+       <p>Send quotes with</p>
+       <p>supplier</p>
+       <p>preferences</p>
+      </div>
+     </div>
+    </div>
+    <div class="flex  mt-3 justify-center items-center">
+      <div class=" w-[1140px] bg-white h-[240px] border-2 flex   ">
+        <div class=" flex flex-col justify-center w-[300px] h-[230px] ">
+        <h1 class="ml-4 mb-0 font-bold text-2xl ">Deals and Offers</h1>
+        <p class="ml-4 text-gray-400 mb-3">Hygiene equipments</p>
+        <div class="flex space-x-1  mb-12 ml-3 rounded-lg">
+          <!-- Days -->
+          <div class="flex flex-col justify-center items-center bg-gray-800 text-white  rounded-md w-12 h-16">
+              <span class="text-2xl font-bold">04</span>
+              <span class="text-xs uppercase">Days</span>
+          </div>
+      
+          <!-- Hours -->
+          <div class="flex flex-col justify-center items-center bg-gray-800 text-white  rounded-md w-12 h-16">
+              <span class="text-3xl font-bold">12</span>
+              <span class="text-xs uppercase">Hour</span>
+          </div>
+      
+          <!-- Minutes -->
+          <div class="flex flex-col justify-center items-center bg-gray-800 text-white  rounded-md w-12 h-16">
+              <span class="text-3xl font-bold">45</span>
+              <span class="text-xs uppercase">Min</span>
+          </div>
+      
+          <!-- Seconds -->
+          <div class="flex flex-col justify-center items-center bg-gray-800 text-white  rounded-md w-12 h-16">
+              <span class="text-3xl font-bold">30</span>
+              <span class="text-xs uppercase">Sec</span>
+          </div>
+      </div>
+    </div>
+      
+      <div class=" flex justify-center items-center ">
+        <div class="w-[170px] h-[240px] border-2 flex flex-col justify-evenly items-center">
+         <img src="./images/image 35.png" alt="logo" class="w-[101px] h-[101px]">
+         <h1 class="pt-8 text-[18px]">Smart Watches</h1>
+         <button class="bg-red-200 rounded-full w-[61px] h-[28px] hover:bg-red-300">-25%</button>
+        </div>
+        <div class="w-[170px] h-[240px] border-2 border-l-0 flex flex-col justify-evenly items-center">
+          <img src="./images/image 34.png" alt="logo" class="w-[101px] h-[101px]">
+          <h1 class="pt-8">Laptops</h1>
+          <button class="bg-red-200 rounded-full w-[61px] h-[28px] hover:bg-red-300">-15%</button>
+         </div>
+         <div class="w-[170px] h-[240px] border-2 border-l-0 flex flex-col justify-evenly items-center">
+          <img src="./images/image 28.png" alt="logo" class="w-[129px] h-[91]">
+          <h1 class="pt-8">GoPro Cameras</h1>
+          <button class="bg-red-200 rounded-full w-[61px] h-[28px] hover:bg-red-300">-40%</button>
+         </div>
+         <div class="w-[170px] h-[240px] border-2 border-l-0 flex flex-col justify-evenly items-center">
+          <img src="./images/image 29.png" alt="logo" class="w-[110px] h-[125px] ">
+          <h1 class="pt-1">HeadPhones</h1>
+          <button class="bg-red-200 rounded-full w-[61px] h-[28px] hover:bg-red-300">-25%</button>
+         </div>
+         <div class="w-[170px] h-[240px] border-2 border-l-0 border-r-0 flex flex-col justify-evenly items-center">
+          <img src="./images/image 23.png" alt="logo" class="w-[120px] h-[90px]">
+          <h1 class="pt-8">Mobile Can</h1>
+          <button class="bg-red-200 rounded-full w-[61px] h-[28px] hover:bg-red-300">-25%</button>
+         </div>
+     </div>
+      </div>
+</div>
+<div class="w-[1180px] bg-white h-[257px] mt-4 border-2 flex justify-center items-center mx-auto">
+  <div class="w-[280px] flex flex-col   h-[257px]">
+    <div class="absolute flex flex-col  w-[150px] h-[140px] ml-6 mt-6 justify-start">
+      <h1 class="font-bold mb-4">Home and <br> Outdoor</h1>
+      <button class=" w-[130px] h-[40px]  bg-white hover:bg-amber-100 rounded-lg font-semibold items-center pl-5  mx-auto flex ">Source Now</button>
+    </div>
+    <img src="./images/image 92.png" alt="">
+  </div>
+  <div class="flex flex-col ">
+    <div class="flex border-l-2 border-b-0 ">
+      <div class=" flex  border- flex-col w-[223px] h-[127px] relative p-2">
+        <div class="flex flex-col items-start">
+          <h1 class="font-semibold">Soft & Chairs</h1>
+          <p class="text-gray-500">From</p>
+          <span class=" text-gray-500">
+            <a href="#">USD 19</a>
+          </span>
+        </div>
+        <img src="./images/rasm.png" alt="" class="w-[82px] h-[82px] flex justify-end absolute  bottom-2 left-32">
+      </div>
+      <div class="border-l-2 flex flex-col w-[223px] h-[127px] relative p-2">
+        <div class="flex flex-col items-start">
+          <h1 class="font-semibold">Table Lamps</h1>
+          <p class="text-gray-500">From</p>
+          <span class=" text-gray-500">
+            <a href="#">USD 25</a>
+          </span>
+        </div>
+        <img src="./images/image 94.png" alt="" class="w-[82px] h-[82px] flex justify-end  absolute bottom-2 left-32">
+      </div>
+      <div class=" border-l-2 flex flex-col w-[223px] h-[127px] relative p-2">
+        <div class="flex flex-col items-start">
+          <h1 class="font-semibold">Kitchen Dishes</h1>
+          <p class="text-gray-500">From</p>
+          <span class=" text-gray-500">
+            <a href="#">USD 12</a>
+          </span>
+        </div>
+        <img src="./images/image 93.png" alt="" class="w-[82px] h-[82px] flex justify-end absolute bottom-2 left-32">
+      </div>
+      <div class="flex flex-col border-l-2   w-[223px] h-[127px] relative p-2">
+        <div class="flex flex-col items-start">
+          <h1 class="font-semibold">Smart Wacthes</h1>
+          <p class="text-gray-500">From</p>
+          <span class=" text-gray-500">
+            <a href="#">USD 20</a>
+          </span>
+        </div>
+        <img src="./images/image 90.png" alt="" class="w-[82px] h-[82px] flex justify-end absolute bottom-2 left-32">
+      </div>
+    </div>
+    <div class="flex border-t-2 border-l-2">
+      <div class=" flex flex-col w-[223px] h-[127px]  relative p-2">
+        <div class="flex flex-col items-start">
+          <h1 class="font-semibold">Kitchen Mixture</h1>
+          <p class="text-gray-500">From</p>
+          <span class=" text-gray-500">
+            <a href="#">USD 119</a>
+          </span>
+        </div>
+        <img src="./images/image 88.png" alt="" class="w-[82px] h-[82px] flex justify-end absolute bottom-2 left-32">
+      </div>
+      <div class=" flex flex-col border-l-2 w-[223px] h-[127px]  relative p-2">
+        <div class="flex flex-col items-start">
+          <h1 class="font-semibold">Blender</h1>
+          <p class="text-gray-500">From</p>
+          <span class=" text-gray-500">
+            <a href="#">USD 250</a>
+          </span>
+        </div>
+        <img src="./images/image 87.png" alt="" class="w-[82px] h-[82px] flex justify-end absolute bottom-2 left-32">
+      </div>
+      <div class=" flex flex-col border-l-2 w-[223px] h-[127px]  relative p-2">
+        <div class="flex flex-col items-start">
+          <h1 class="font-semibold">Home Appilances</h1>
+          <p class="text-gray-500">From</p>
+          <span class=" text-gray-500">
+            <a href="#">USD 70</a>
+          </span>
+        </div>
+        <img src="./images/55.png" alt="" class="w-[82px] h-[82px] flex justify-end absolute bottom-2 left-32">
+      </div>
+      <div class=" flex flex-col border-l-2 w-[223px] h-[127px] relative p-2">
+        <div class="flex flex-col items-start">
+          <h1 class="font-semibold">Coffee Maker</h1>
+          <p class="text-gray-500">From</p>
+          <span class=" text-gray-500">
+            <a href="#">USD 200</a>
+          </span>
+        </div>
+        <img src="./images/image 89.png" alt="" class="w-[82px] h-[82px] flex justify-end absolute bottom-2 left-32">
+      </div>
+    </div> 
+  </div>
+</div>
+<div class="w-[1180px] bg-white h-[257px] mt-4 border-2 flex justify-center items-center mx-auto">
+  <div class="w-[280px] flex flex-col   h-[257px]">
+    <div class="absolute flex flex-col  w-[150px] h-[140px] ml-6 mt-6 ">
+      <h1 class="font-bold mb-4">Consumer <br> Electroinics and <br> gadgets</h1>
+      <button class=" w-[130px] h-[40px]  bg-white hover:bg-blue-100 font-semibold rounded-lg items-center pl-5  mx-auto flex ">Source Now</button>
+    </div>
+    <img src="./images/Group 970.png" alt="">
+  </div>
+  <div class="flex flex-col ">
+    <div class="flex border-l-2 border-b-0 ">
+      <div class=" flex  border- flex-col w-[223px] h-[127px] relative p-2">
+        <div class="flex flex-col items-start">
+          <h1 class="font-semibold">Smart Watches</h1>
+          <p class="text-gray-500">From</p>
+          <span class=" text-gray-500">
+            <a href="#">USD 19</a>
+          </span>
+        </div>
+        <img src="./images/watch.png" alt="" class="w-[82px] h-[82px] flex justify-end absolute  bottom-2 left-32">
+      </div>
+      <div class="border-l-2 flex flex-col w-[223px] h-[127px] relative p-2">
+        <div class="flex flex-col items-start">
+          <h1 class="font-semibold">Cameras</h1>
+          <p class="text-gray-500">From</p>
+          <span class=" text-gray-500">
+            <a href="#">USD 25</a>
+          </span>
+        </div>
+        <img src="./images/camera.png" alt="" class="w-[82px] h-[72px] flex justify-end  absolute bottom-2 left-32">
+      </div>
+      <div class=" border-l-2 flex flex-col w-[223px] h-[127px] relative p-2">
+        <div class="flex flex-col items-start">
+          <h1 class="font-semibold">Headphones</h1>
+          <p class="text-gray-500">From</p>
+          <span class=" text-gray-500">
+            <a href="#">USD 15</a>
+          </span>
+        </div>
+        <img src="./images/image 86.png" alt="" class="w-[82px] h-[82px] flex justify-end absolute bottom-2 left-32">
+      </div>
+      <div class="flex flex-col border-l-2   w-[223px] h-[127px] relative p-2">
+        <div class="flex flex-col items-start">
+          <h1 class="font-semibold">Electric Kattles</h1>
+          <p class="text-gray-500">From</p>
+          <span class=" text-gray-500">
+            <a href="#">USD 20</a>
+          </span>
+        </div>
+        <img src="./images/image 85.png" alt="" class="w-[82px] h-[82px] flex justify-end absolute bottom-2 left-32">
+      </div>
+    </div>
+    <div class="flex border-t-2 border-l-2">
+      <div class=" flex flex-col w-[223px] h-[127px]  relative p-2">
+        <div class="flex flex-col items-start">
+          <h1 class="font-semibold">Gaming Set</h1>
+          <p class="text-gray-500">From</p>
+          <span class=" text-gray-500">
+            <a href="#">USD 119</a>
+          </span>
+        </div>
+        <img src="./images/image 29.png" alt="" class="w-[82px] h-[82px] flex justify-end absolute bottom-2 left-32">
+      </div>
+      <div class=" flex flex-col border-l-2 w-[223px] h-[127px]  relative p-2">
+        <div class="flex flex-col items-start">
+          <h1 class="font-semibold">laptops & PC</h1>
+          <p class="text-gray-500">From</p>
+          <span class=" text-gray-500">
+            <a href="#">USD 250</a>
+          </span>
+        </div>
+        <img src="./images/lap.png" alt="" class="w-[82px] h-[82px] flex justify-end absolute bottom-2 left-32">
+      </div>
+      <div class=" flex flex-col border-l-2 w-[223px] h-[127px]  relative p-2">
+        <div class="flex flex-col items-start">
+          <h1 class="font-semibold">Tablets</h1>
+          <p class="text-gray-500">From</p>
+          <span class=" text-gray-500">
+            <a href="#">USD 70</a>
+          </span>
+        </div>
+        <img src="./images/image 32.png" alt="" class="w-[82px] h-[82px] flex justify-end absolute bottom-2 left-32">
+      </div>
+      <div class=" flex flex-col border-l-2 w-[223px] h-[127px] relative p-2">
+        <div class="flex flex-col items-start">
+          <h1 class="font-semibold">Iphone</h1>
+          <p class="text-gray-500">From</p>
+          <span class=" text-gray-500">
+            <a href="#">USD 200</a>
+          </span>
+        </div>
+        <img src="./images/image 33.png" alt="" class="w-[82px] h-[82px] flex justify-end absolute bottom-2 left-32">
+      </div>
+    </div> 
+  </div>
+</div>
+<div class="w-[1180px]  flex mt-3 mx-auto relative h-[420px]">
+<div class="w-[440px] justify-center ml-8 mt-4 gap-3 h-[139px] flex flex-col absolute ">
+  <h1 class="text-2xl text-white">An easy way to send <br> request to all suppliers</h1>
+  <p class="text-white text-sm">An effortless way to reach out to all suppliers at once, <br> ensuring quick communication and responses</p>
+</div>
+<div class="w-[491px] right-10 justify-center mt-7 rounded-lg pl-6 gap-5 bg-white flex flex-col absolute h-[346px]">
+  <h1 class="text-lg font-bold ">Send quote to suppliers</h1>
+  <button class="w-[440px] h-[40px] flex items-center pl-1 border-2 rounded-md ">What item you need?</button> 
+  <input type="text" placeholder="Type more details" class="w-[440px] h-[73px] pl-1 pb-1.5 rounded-md text-gray-500 border-2">
+  <div class="flex gap-2">
+    <button class="border-2 rounded-md w-[206px] h-[40px] hover:bg-blue-800">Quantity</button>
+    <details class="relative group">
+      <summary
+        class=" inline-flex rounded-md border-2 hover:bg-blue-800 justify-center items-center w-[111px] h-[40px]  cursor-pointer"
+      >
+        Pcs
+        <svg
+          class="size-4 text-gray-800 transition-transform group-open:rotate-180"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="m6 9 6 6 6-6"></path>
+        </svg>
+      </summary>
+      </details>
+  </div>
+  <button class="border-2 w-[128px] h-[40px] rounded-md text-white bg-blue-800 hover:bg-blue-600">Send Inquiry</button>
+</div>
+<img src="./images/bgimg.png" alt="" >
+
+
+
+
+
+
+
+
+
+</div>
+<div class=" w-[1180px] flex flex-col mx-auto mt-15 h-[696px]">
+  <h1 class="text-2xl font-medium">Recommended Items</h1>
+  <div class="w-[1180px] flex flex-col justify-between mt-5 h-[640px]">
+    <div class="flex gap-4 ">
+    <div class="w-[220px] bg-white rounded-md h-[310px] border-2 flex flex-col items-center transition-transform duration-300 hover:scale-105">
+      <img src="./images/Bitmap.png" alt="" class="w-[150px] h-[171px] pt-6">
+    <div class="flex flex-col mt-12 mr-14">
+      <h1>$10.30</h1>
+      <p class="text-sm text-gray-400">T-shirt with multiple <br> colors for men</p>
+    </div>
+  </div>
+  <div class="w-[220px] bg-white h-[310px] rounded-md border-2 flex flex-col items-center transition-transform duration-300 hover:scale-105 ">
+    <img src="./images/2 1.png" alt="" class="w-[150px] h-[171px] pt-6">
+  <div class="flex flex-col mt-12 mr-14">
+    <h1>$20.40</h1>
+    <p class="text-sm text-gray-400"> Winter Puffer Jackets <br>  for men</p>
+  </div>
+</div>
+<div class="w-[220px] bg-white h-[310px] border-2 rounded-md flex flex-col items-center transition-transform duration-300 hover:scale-105 ">
+  <img src="./images/image 30.png" alt="" class="w-[150px] h-[171px] pt-6">
+<div class="flex flex-col mt-12 mr-14">
+  <h1>$50.30</h1>
+  <p class="text-sm text-gray-400">Formal Coats with,<br> multiple colors</p>
+</div>
+</div>
+<div class="w-[220px] bg-white h-[310px] border-2 rounded-md flex flex-col items-center transition-transform duration-300 hover:scale-105">
+  <img src="./images/image 24.png" alt="" class="w-[156px] h-[170px] pt-6">
+<div class="flex flex-col mt-12 mr-14">
+  <h1>$10.00</h1>
+  <p class="text-sm text-gray-400">Blue leather wallet  <br> for men</p>
+</div>
+</div>
+<div class="w-[220px] bg-white h-[310px] border-2 rounded-md flex flex-col items-center transition-transform duration-300 hover:scale-105 ">
+  <img src="./images/image 26.png" alt="" class="w-[156px] h-[170px] pt-6">
+<div class="flex flex-col mt-12 mr-14">
+  <h1>$10.00</h1>
+  <p class="text-sm text-gray-400">Jeans bag for travel  <br> for men</p>
+</div>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-[220px] bg-white rounded-md h-[310px] border-2 flex flex-col items-center transition-transform duration-300 hover:scale-105 ">
+  <img src="./images/jeans.png" alt="" class="w-[150px] h-[171px] pt-6">
+<div class="flex flex-col mt-12 mr-14">
+  <h1>$08.30</h1>
+  <p class="text-sm text-gray-400">Short jeans with different <br> colors for men</p>
+</div>
+</div>
+<div class="w-[220px] bg-white h-[310px] rounded-md border-2 flex flex-col items-center transition-transform duration-300 hover:scale-105">
+<img src="./images/seth.png" alt="" class="w-[150px] h-[171px] pt-6">
+<div class="flex flex-col mt-12 mr-14">
+<h1>$30.40</h1>
+<p class="text-sm text-gray-400"> Headphone set with<br>different sizes</p>
+</div>
+</div>
+<div class="w-[220px] bg-white h-[310px] border-2 rounded-md flex flex-col items-center transition-transform duration-300 hover:scale-105">
+<img src="./images/bagj.png" alt="" class="w-[150px] h-[171px] pt-6">
+<div class="flex flex-col mt-12 mr-14">
+<h1>$50.30</h1>
+<p class="text-sm text-gray-400">Jeans bag for travel,<br> for men</p>
+</div>
+</div>
+<div class="w-[220px] bg-white h-[310px] border-2 rounded-md flex flex-col items-center transition-transform duration-300 hover:scale-105">
+<img src="./images/bowl.png" alt="" class="w-[156px] h-[170px] pt-6">
+<div class="flex flex-col mt-12 mr-14">
+<h1>$10.00</h1>
+<p class="text-sm text-gray-400">Home and kitchen <br>Appilances </p>
+</div>
+</div>
+<div class="w-[220px] bg-white h-[310px] border-2 rounded-md flex flex-col items-center transition-transform duration-300 hover:scale-105">
+<img src="./images/katt.png" alt="" class="w-[156px] h-[170px] pt-6">
+<div class="flex flex-col mt-12 mr-14">
+<h1>$10.00</h1>
+<p class="text-sm text-gray-400">Electroinic Kettles <br> for Kitchen</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="w-[1180px] h-[256px] flex flex-col mx-auto mt-3">
+  <h1 class="text-2xl font-medium p-3">Our Extra Services</h1>
+  <div class="flex gap-x-6">
+    <a href="" class="block transform transition duration-300 hover:scale-105">
+    <div class="w-[280px] bg-white flex flex-col  h-[200px] relative ">
+      <div class="w-[280px] h-[120px]">
+        <img src="./images/1.png" alt="" class=" w-[280px] rounded-t-md h-[120px] opacity-50">
+      </div>
+      <div class=" pl-4 p-4  font-medium border-2 rounded-b-md border-t-0"><h1>Source from <br> Industry Hub</h1></div>
+      <div class="w-[55px] h-[55px] border-2 rounded-full bg-blue-300 flex justify-center items-center absolute bottom-12 left-50">
+        <img src="./images/search.png" alt="" class="w-[24px] h-[24px] ">
+      </div>
+    </div>
+    </a>
+    <a href="" class="block transform transition duration-300 hover:scale-105">
+    <div class="w-[280px] flex bg-white flex-col  h-[200px] relative ">
+      <div class="w-[280px] h-[120px]">
+        <img src="./images/image 104.png" alt="" class=" w-[280px] h-[120px] rounded-t-md opacity-50">
+      </div>
+      <div class=" pl-4 p-4  font-medium border-2 rounded-b-md border-t-0"><h1>Customize your<br> Products</h1></div>
+      <div class="w-[55px] h-[55px] border-2 rounded-full bg-blue-300 flex justify-center items-center absolute bottom-12 left-50">
+        <img src="./images/inventory_2.png" alt="" class="w-[24px] h-[24px] ">
+      </div>
+    </div>
+    </a>
+    <a href="" class="block transform transition duration-300 hover:scale-105">
+    <div class="w-[280px]  bg-white flex flex-col  h-[200px] relative ">
+      <div class="w-[280px] h-[120px]">
+        <img src="./images/image 106.png" alt="" class=" w-[280px]  rounded-t-md h-[120px] opacity-50">
+      </div>
+      <div class=" pl-4 p-4  font-medium border-2 rounded-b-md border-t-0"><h1>Fast Reliable Shipping<br> by Ocean or Air</h1></div>
+      <div class="w-[55px] h-[55px] border-2 rounded-full bg-blue-300 flex justify-center items-center absolute bottom-12 left-50">
+        <img src="./images/Vector.png" alt="" class="w-[24px] h-[24px] ">
+      </div>
+    </div>
+    </a>
+    <a href="" class="block transform transition duration-300 hover:scale-105">
+    <div class="w-[280px] bg-white flex flex-col  h-[200px] relative ">
+      <div class="w-[280px] h-[120px]">
+        <img src="./images/image 107.png" alt="" class=" w-[280px] h-[120px]  rounded-t-md opacity-50">
+      </div>
+      <div class=" pl-4 p-4  font-medium border-2 rounded-b-md border-t-0"><h1>Product Monitoring <br> and inspection</h1></div>
+      <div class="w-[55px] h-[55px] border-2 rounded-full bg-blue-300 flex justify-center items-center absolute bottom-12 left-50">
+        <img src="./images/security.png" alt="" class="w-[24px] h-[24px] ">
+      </div>
+    </div>
+     </a>
+  </div>
+</div>
+<div class="w-[1177px]  h-[137px]  mt-4 mx-auto">
+  <h1 class="text-2xl font-medium p-4">Suppliers by Region</h1>
+<div class="w-[1177px] h-[82px] flex flex-col gap-2 items-center ">
+<div class="flex  ">
+  <div class=" flex items-center gap-2 w-[221px]  h-[36px]">
+  <div>
+    <img src="./images/icon.png" alt="" class="w-[28px] h-[20px]">
+  </div>
+  <div>
+    <a href="">
+    <h1 class="font-medium m-0 leading-none">Arab Emirates</h1>
+    <p class="text-gray-400 m-0 leading-none text-sm">shopname.ae</p>
+    </a>
+</div>
+</div>
+<div class="flex items-center w-[221px] h-[36px] gap-2">
+  <div>
+    <img src="./images/icon2.png" alt="" class="w-[28px] h-[20px]">
+  </div>
+  <div>
+    <a href="">
+    <h1 class="font-medium m-0 leading-none">Australia</h1>
+    <p class="text-gray-400 m-0 leading-none text-sm">shopname.ae</p>
+    </a>
+  </div>
+</div>
+<div class="flex items-center w-[221px] h-[36px] gap-2">
+  <div>
+    <img src="./images/icon5.png" alt="" class="w-[28px] h-[20px]">
+  </div>
+  <div>
+    <a href="">
+    <h1 class="font-medium m-0 leading-none">United States</h1>
+    <p class="text-gray-400 m-0 leading-none text-sm">shopname.ae</p>
+    </a>
+  </div>
+</div>
+<div class="flex items-center w-[221px] h-[36px] gap-2">
+  <div>
+    <img src="./images/icon4.png" alt="" class="w-[28px] h-[20px]">
+  </div>
+  <div>
+    <a href="">
+    <h1 class="font-medium m-0 leading-none">Russia</h1>
+    <p class="text-gray-400 m-0 leading-none text-sm">shopname.ae</p>
+    </a>
+  </div>
+</div>
+<div class="flex items-center w-[221px] h-[36px] gap-2">
+  <div>
+    <img src="./images/icon5.png" alt="" class="w-[28px] h-[20px]">
+  </div>
+  <div>
+    <a href="">
+    <h1 class="font-medium m-0 leading-none">Italy</h1>
+    <p class="text-gray-400 m-0 leading-none text-sm">shopname.ae</p>
+    </a>
+  </div>
+</div>
+</div>
+<div class="flex  ">
+  <div class="flex items-center w-[221px] h-[36px] gap-2">
+    <div>
+      <img src="./images/icon9.png" alt="" class="w-[28px] h-[20px]">
+    </div>
+    <div>
+      <a href="">
+      <h1 class="font-medium m-0 leading-none">Denmark</h1>
+      <p class="text-gray-400 m-0 leading-none text-sm">shopname.ae</p>
+      </a>
+    </div>
+  </div>
+  <div class="flex items-center w-[221px] h-[36px] gap-2">
+    <div>
+      <img src="./images/icon8.png" alt="" class="w-[28px] h-[20px]">
+    </div>
+    <div>
+      <a href="">
+      <h1 class="font-medium m-0 leading-none">France</h1>
+      <p class="text-gray-400 m-0 leading-none text-sm">shopname.ae</p>
+      </a>
+    </div>
+  </div>
+  <div class="flex items-center w-[221px] h-[36px] gap-2">
+    <div>
+      <img src="./images/icon.png" alt="" class="w-[28px] h-[20px]">
+    </div>
+    <div>
+      <a href="">
+      <h1 class="font-medium m-0 leading-none">Arab Emirates</h1>
+      <p class="text-gray-400 m-0 leading-none text-sm">shopname.ae</p>
+      </a>
+    </div>
+  </div>
+  <div class="flex items-center w-[221px] h-[36px] gap-2">
+    <div>
+      <img src="./images/icon7.png" alt="" class="w-[28px] h-[20px]">
+    </div>
+    <div>
+      <a href="">
+      <h1 class="font-medium m-0 leading-none">China</h1>
+      <p class="text-gray-400 m-0 leading-none text-sm">shopname.ae</p>
+      </a>
+    </div>
+  </div>
+  <div class="flex items-center w-[221px] h-[36px] gap-2">
+    <div>
+      <img src="./images/icon6.png" alt="" class="w-[28px] h-[20px]">
+    </div>
+    <div>
+      <a href="">
+      <h1 class="font-medium m-0 leading-none">Great Britain</h1>
+      <p class="text-gray-400 m-0 leading-none text-sm">shopname.ae</p>
+      </a>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+<div class="w-full h-[190px] flex flex-col mx-auto  mt-8 items-center bg-gray-100">
+<div class="w-[617px] mt-8 h-[113px] flex flex-col gap-4 items-center">
+<div class="flex flex-col items-center">
+  <h1 class="text-2xl font-medium">Subscribe on our newsletter</h1>
+  <p class="text-gray-500">Get daily news on upcoming offers from many suppliers all over the world</p>
+</div>
+<div class="flex justify-center gap-x-2 ">
+<div class="flex items-center relative">
+  <input type="text" placeholder="Email" class="pl-6 bg-white border-2  focus:border-blue-200 focus:ring-1 focus:ring-blue-500
+  placeholder-gray-400 transition w-[274px] h-[40px] rounded-md outline-none">
+  <img src="./images/email.png" alt="" class="absolute pl-0.5">
+</div>
+<div class="flex">
+  <button class="border-2 rounded-md w-[110px] h-[42px] text-white bg-blue-700 hover:bg-blue-500">Subscribe</button>
+</div>
+</div>
+</div>
+</div>
+    <footer class=" w-full h-[280px] bg-white pt-8 ">
       <div class="m-8 flex border-red-500 justify-between">
         <div>
           <div class="flex items-center">
@@ -174,5 +864,6 @@
       </div>
       <div><img src="./images/Group 986.png" alt="" /></div>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
