@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./output.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/597fcd4c34.js" crossorigin="anonymous"></script>
+    <style>
+        /* Custom slider styles */
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            background: transparent;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        /* Custom slider track */
+        input[type="range"]::-webkit-slider-runnable-track {
+            height: 8px;
+            background: transparent;
+        }
+
+        input[type="range"]::-moz-range-track {
+            height: 8px;
+            background: transparent;
+        }
+
+        /* Custom slider thumbs */
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 16px;
+            width: 16px;
+            background: #3b82f6;
+            border-radius: 50%;
+            cursor: pointer;
+            margin-top: -4px;
+            position: relative;
+            z-index: 2;
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            height: 16px;
+            width: 16px;
+            background: #3b82f6;
+            border-radius: 50%;
+            cursor: pointer;
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body class="bg-blue-50">
+    
+    <nav class="flex bg-white justify-around p-4 items-center">
+        <div class="brand-logo flex items-center">
+          <img
+            src="./images/logo-symbol@2x.png"
+            alt="logo"
+            class="w-[38px] h-[40px]"
+          />
+          <h1 class="text-blue-400 font-bold text-2xl">Brand</h1>
+        </div>
+        <div class="flex items-center">
+          <input
+            type="text"
+            placeholder="Search"
+            class="border-[2px] focus:outline-none focus:ring-1 w-[421px] focus:ring-blue-200 focus:border-blue-600 transition-all duration-200 rounded-l-[5px] py-2 pl-1 border-blue-500"
+          />
+          <details class="relative group">
+            <summary
+              class="border-[2px] py-2.5 px-4 inline-flex border-l-0 border-r-0 items-center gap-x-2 text-sm font-medium border-blue-500 bg-white text-gray-800  hover:bg-gray-50 cursor-pointer"
+            >
+              All Category
+              <svg
+                class="size-4 text-gray-600 transition-transform group-open:rotate-180"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="m6 9 6 6 6-6"></path>
+              </svg>
+            </summary>
+  
+            <div
+              class="absolute z-10 mt-2 min-w-60 bg-white shadow-md rounded-lg p-2 border border-gray-200"
+            >
+              <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                >Men's</a
+              >
+              <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                >Mobile Phones</a
+              >
+              <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                >Watches</a
+              >
+              <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                >Home Appliances</a
+              >
+            </div>
+          </details>
+          <button
+            class="text-white py-2.5 w-30 rounded-r-[5px] bg-blue-500 hover:bg-blue-700 border-blue-500"
+          >
+            Search
+          </button>
+        </div>
+        <div class="gap-4 items-center text-center">
+          <ul class="flex space-x-5">
+            <div class="text-gray-500">
+              <a href="">
+                <img src="./images/nav img1.png" alt="logo" class="ml-3" />
+                <li class="mt-1">Profile</li>
+              </a>
+            </div>
+            <div>
+              <a href="">
+                <img src="./images/nav img2.png" alt="logo" class="ml-5" />
+                <li class="mt-1 text-gray-500">Message</li>
+              </a>
+            </div>
+            <div>
+              <a href="">
+                <img src="./images/nav img3.png" alt="logo" class="ml-2.5" />
+                <li class="text-gray-500 mt-1.5">Orders</li>
+              </a>
+            </div>
+            <div>
+              <a href="">
+                <img src="./images/nav img4.png" alt="logo" class="ml-2.5" />
+                <li class="text-gray-500 mt-1">My Cart</li>
+              </a>
+            </div>
+          </ul>
+        </div>
+      </nav>
+        <nav class="border-b-2 bg-white mb-4 p-4">
+          <div class="container mx-auto flex justify-center items-center">
+  
+              <!-- Hamburger Icon (Always Visible) -->
+               <div>
+              <button id="menu-btn" class="text-black text-2xl focus:outline-none">
+                  ☰
+              </button>
+              </div>
+  
+              <!-- Desktop Menu (Always Visible on Desktop) -->
+               <div class="">
+              <ul class="hidden md:flex space-x-4 text-black font-medium">
+                  <li><a href="index.html">All Category</a></li>
+                  <li><a href="#">Hot Offers</a></li>
+                  <li><a href="#">Gift Boxes</a></li>
+                  <li><a href="#">Projects</a></li>
+                  <li><a href="#">Menu Item</a></li>
+                  <details class="relative group">
+                    <summary
+                      class=" inline-flex border-l-0 border-r-0 items-center  font-medium  text-black  cursor-pointer"
+                    >
+                      Help
+                      <svg
+                        class="size-4 text-gray-800 transition-transform group-open:rotate-180"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="m6 9 6 6 6-6"></path>
+                      </svg>
+                    </summary>
+              </ul>
+          </div>
+  
+          <!-- Mobile Menu (Hidden by Default, Shows on Click) -->
+          <div id="mobile-menu" class="hidden md:hidden bg-blue-600 text-black p-4">
+              <a href="#" class="block py-2">Home</a>
+              <a href="#" class="block py-2">About</a>
+              <a href="#" class="block py-2">Services</a>
+              <a href="#" class="block py-2">Contact</a>
+          </div>
+          <div class="relative inline-block ml-70">
+            <!-- Dropdown Button -->
+             <div>
+            <button id="dropdown-btn" class="flex items-center justify-between  text-black font-medium py-2 rounded-md w-full focus:outline-none">
+                <span id="selected-country">United States - USD</span>
+                <svg id="arrow-icon" class=" h-5 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </button>
+            </div>
+    
+            <!-- Dropdown Menu -->
+            <ul id="dropdown-menu" class="hidden absolute left-0 mt-2 w-full bg-white border rounded-lg shadow-lg text-gray-800">
+                <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer" data-value="United States - USD">🇺🇸 United States - USD</li>
+                <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer" data-value="United Kingdom - GBP">🇬🇧 United Kingdom - GBP</li>
+                <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer" data-value="India - INR">🇮🇳 India - INR</li>
+                <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer" data-value="European Union - EUR">🇪🇺 European Union - EUR</li>
+                <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer" data-value="Japan - JPY">🇯🇵 Japan - JPY</li>
+                <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer" data-value="Australia - AUD">🇦🇺 Australia - AUD</li>
+            </ul>
+        </div>
+        <div class="relative inline-block ml-20 w-16">
+          <button id="ship-btn" class="flex items-center justify-between text-black font-medium px-1 py-2 rounded-md w-full focus:outline-none">
+              <span id="selected-flag" class="flag whitespace-nowrap">ship to</span>
+              <svg id="ship-arrow" class="w-5 h-5  transition-transform transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M19 9l-7 7-7-7"></path>
+              </svg>
+          </button>
+          <ul id="ship-menu" class="dropdown-menu hidden absolute left-0 mt-2 w-full bg-white border rounded-lg shadow-lg text-center">
+              <li class="px-2 py-1 hover:bg-gray-200 cursor-pointer flag" data-value="🇺🇸">🇺🇸</li>
+              <li class="px-2 py-1 hover:bg-gray-200 cursor-pointer flag" data-value="🇬🇧">🇬🇧</li>
+              <li class="px-2 py-1 hover:bg-gray-200 cursor-pointer flag" data-value="🇮🇳">🇮🇳</li>
+              <li class="px-2 py-1 hover:bg-gray-200 cursor-pointer flag" data-value="🇪🇺">🇪🇺</li>
+              <li class="px-2 py-1 hover:bg-gray-200 cursor-pointer flag" data-value="🇯🇵">🇯🇵</li>
+              <li class="px-2 py-1 hover:bg-gray-200 cursor-pointer flag" data-value="🇦🇺">🇦🇺</li>
+          </ul>
+      </div>
+        </div>
+      </nav>
+      <div class="flex justify-evenly">
+    <div>
+        <div class="w-[240px] h-[1440px]">
+            <div class="border-t-2">
+                <details class="group w-full">
+                    <summary class="inline-flex  w-full items-center justify-between px-4 py-2 font-medium text-black cursor-pointer">
+                        Category
+                        <svg class="size-4 text-gray-800 transition-transform group-open:rotate-180"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m6 9 6 6 6-6"></path>
+                        </svg>
+                    </summary>
+                    <div class="mt-2"> <!-- Ensures dropdown content takes space -->
+                        <ul class="py-2 space-y-2">
+                            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Mobile Accessories</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Electronics</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Smart Phones</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Modem Tech</a></li>
+                        </ul>
+                        <div class=" px-4 py-2">
+                            <button class="w-full text-center text-blue-600 hover:text-blue-800">See All</button>
+                        </div>
+                    </div>
+                </details>
+            </div>
+            
+            <div class="border-t-2 mt-2">
+                <details class="group w-full">
+                    <summary class="inline-flex  w-full items-center justify-between px-4 py-2 font-medium text-black cursor-pointer">
+                        Brand
+                        <svg class="size-4 text-gray-800 transition-transform group-open:rotate-180"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m6 9 6 6 6-6"></path>
+                        </svg>
+                    </summary>
+                    <div class="mt-2 ">
+                        <ul class="py-2 space-y-2">
+                            <li class="flex items-center gap-2">
+                                <input type="checkbox" id="Samsung">
+                                <label for="Samsung">Samsung</label>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <input type="checkbox" id="Apple">
+                                <label for="Apple">Apple</label>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <input type="checkbox" id="Huawei">
+                                <label for="Huawei">Huawei</label>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <input type="checkbox" id="Pocco">
+                                <label for="Pocco">Pocco</label>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <input type="checkbox" id="Lenovo">
+                                <label for="Lenovo">Lenovo</label>
+                            </li>
+                        </ul>
+                        <div class=" px-4 py-2">
+                            <button class="w-full text-center text-blue-600 hover:text-blue-800">See All</button>
+                        </div>
+                    </div>
+                </details>
+            </div>
+            <div class="mt-2">
+                <details class="group w-full">
+                <summary class="inline-flex border-t-2 w-full items-center justify-between px-4 py-2 font-medium text-black cursor-pointer">
+                    Price Range
+                    <svg class="size-4 text-gray-800 transition-transform group-open:rotate-180"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m6 9 6 6 6-6"></path>
+                    </svg>
+                </summary>
+
+    <!-- Range Slider -->
+    <div class="relative mt-4 w-59">
+        <div class="relative w-full h-2 bg-gray-300 rounded">
+            <div id="progress-bar" class="absolute h-2 bg-blue-500 rounded"></div>
+        </div>
+
+        <!-- Range Sliders -->
+        <input type="range" id="min-price" min="0" max="1000" value="200" step="10" class="z-10">
+        <input type="range" id="max-price" min="0" max="1000" value="800" step="10" class="z-10">
+    </div>
+    <div class="flex mt-4 ml-2 space-x-6  ">
+        <div class="flex flex-col items-center">
+            <label class="text-sm font-medium mb-1">Min</label>
+            <input type="text" id="min-value" class="w-20 text-center px-2 py-1 border border-gray-400 rounded-md" readonly>
+        </div>
+        <div class="flex flex-col items-center">
+            <label class="text-sm font-medium mb-1">Max</label>
+            <input type="text" id="max-value" class="w-20 text-center px-2 py-1 border border-gray-400 rounded-md" readonly>
+        </div>
+    </div>
+            </div>
+            </details>
+            <div class="border-t-2 mt-2">
+                <details class="group w-full">
+                    <summary class="inline-flex  w-full items-center justify-between px-4 py-2 font-medium text-black cursor-pointer">
+                        Feature
+                        <svg class="size-4 text-gray-800 transition-transform group-open:rotate-180"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m6 9 6 6 6-6"></path>
+                        </svg>
+                    </summary>
+                   <div class="mt-2 ">
+                        <ul class="py-2 space-y-2">
+                            <li class="flex items-center gap-2">
+                                <input type="checkbox" id="Metallic">
+                                <label for="Metallic">Metallic</label>
+                            </li> 
+                            <li class="flex items-center gap-2">
+                                <input type="checkbox" id="PlasticCover">
+                                <label for="PlasticCover">Plastic Cover</label>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <input type="checkbox" id="8GBRam">
+                                <label for="8GBRam">8GB Ram</label>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <input type="checkbox" id="SuperPower">
+                                <label for="SuperPower">Super Power</label>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <input type="checkbox" id="LargeMemory">
+                                <label for="LargeMemory">Large Memory</label>
+                            </li>
+                        </ul>
+                        <div class=" px-4 py-2">
+                            <button class="w-full text-center text-blue-600 hover:text-blue-800">See All</button>
+                        </div>
+                    </div>
+                </details>
+            </div>
+            <div class="border-t-2 mt-2">
+                <details class="group  w-full">
+                    <summary class="inline-flex  w-full items-center justify-between px-4 py-2 font-medium text-black cursor-pointer">
+                        Condition
+                        <svg class="size-4 text-gray-800 transition-transform group-open:rotate-180"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m6 9 6 6 6-6"></path>
+                        </svg>
+                    </summary>
+                   <div class="mt-2 space-y-2">
+                        <ul class="py-2 space-y-2">
+                            <li class="flex items-center gap-2">
+                                <input type="checkbox" id="Any">
+                                <label for="Any">Any</label>
+                            </li> 
+                            <li class="flex items-center gap-2">
+                                <input type="checkbox" id="refurbished">
+                                <label for="refurbished">Refurbished</label>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <input type="checkbox" id="brand new">
+                                <label for="8GBRam">Brand New</label>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <input type="checkbox" id="old item">
+                                <label for="SuperPower">Old Items</label>
+                            </li>
+                        </ul>
+                        <div class=" px-4 py-2">
+                            <button class="w-full text-center text-blue-600 hover:text-blue-800">See All</button>
+                        </div>
+                    </div>
+                </details>
+            </div>
+            <div class="border-t-2 mt-2">
+                <details class="group w-full">
+                    <summary class="inline-flex  w-full items-center justify-between px-4 py-2 font-medium text-black cursor-pointer">
+                        Ratings
+                        <svg class="size-4 text-gray-800 transition-transform group-open:rotate-180"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m6 9 6 6 6-6"></path>
+                        </svg>
+                    </summary>
+                    <div class="mt-2 space-y-2 ">
+                        <ul class="py-1 pl-4  flex space-x-2">
+                            <input type="checkbox" class="">
+                            <div class="flex star-rating">
+                                <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="1"></i>
+                                <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="2"></i>
+                                <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="3"></i>
+                                <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="4"></i>
+                                <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="5"></i>
+                            </div>
+                        </ul>
+                        <ul class="py-1 pl-4 flex space-x-2">
+                            <input type="checkbox" class="">
+                            <div class="flex star-rating">
+                                <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="1"></i>
+                                <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="2"></i>
+                                <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="3"></i>
+                                <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="4"></i>
+                                <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="5"></i>
+                            </div>
+                        </ul>
+                        <ul class="py-1 pl-4 flex space-x-2">
+                            <input type="checkbox" class="">
+                            <div class="flex star-rating">
+                                <i class="fa-regular fa-star cursor-pointer  text-yellow-300" data-value="1"></i>
+                                <i class="fa-regular fa-star cursor-pointer  text-yellow-300" data-value="2"></i>
+                                <i class="fa-regular fa-star cursor-pointer  text-yellow-300" data-value="3"></i>
+                                <i class="fa-regular fa-star cursor-pointer  text-yellow-300" data-value="4"></i>
+                                <i class="fa-regular fa-star cursor-pointer  text-yellow-300" data-value="5"></i>
+                            </div>
+                        </ul>
+                        <ul class="py-1 pl-4 flex space-x-2">
+                            <input type="checkbox" class="">
+                            <div class="flex star-rating">
+                                <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="1"></i>
+                                <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="2"></i>
+                                <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="3"></i>
+                                <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="4"></i>
+                                <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="5"></i>
+                            </div>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </div>
+        <div class=>
+            <div class="w-[920px] flex bg-white pl-2 justify-between h-[62px] border-2 rounded-md">
+                <h1 class="flex items-center">12,911 items in&nbsp;<b>Mobile Accessories</b></h1>
+                <div class="flex space-x-4 mr-2">
+                <div class="flex items-center ">
+                <input type="checkbox" name="" id="" class="cursor-pointer">
+                <label for="" class="ml-2" >Veriefied Only</label>
+                </div>
+                <details class="flex items-center ">
+                    <summary class="inline-flex gap-12 pl-2 border-2 h-[40px] rounded-md items-center justify-between font-medium text-black cursor-pointer">
+                        Featured
+                        <svg class="size-4 text-gray-800 transition-transform group-open:rotate-180"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m6 9 6 6 6-6"></path>
+                        </svg>
+                    </summary>
+             </details>
+             <div class="flex w-[76px] h-[40px] mt-2 ">
+                <div class="relative ">
+                    <!-- Hamburger Button -->
+                    <button id="hamburger" class="text-3xl border-2 font-extrabold p-0.5 rounded-l-sm bg-gray-500 text-white ">
+                        ☰
+                    </button>
+            
+                    <!-- Side menu initially hidden off-screen -->
+                    <div id="menu" class="absolute left-[-250px]  bg-black text-white h-full p-5 hidden transition-all ease-in-out duration-300">
+                        <ul class="space-y-4 text-lg ">
+                            <li><a href="#" class="block p-2 hover:bg-gray-700 rounded">Home</a></li>
+                            <li><a href="#" class="block p-2 hover:bg-gray-700 rounded">About</a></li>
+                            <li><a href="#" class="block p-2 hover:bg-gray-700 rounded">Services</a></li>
+                            <li><a href="#" class="block p-2 hover:bg-gray-700 rounded">Contact</a></li>
+                        </ul>
+                    </div>
+            </div>
+               
+                <div class="flex w-[38px] h-[44px] border-2 rounded-r-sm">
+                <a href=""class= "w-[38px] h-[40px] grid grid-cols-2 grid-rows-2 gap-1">
+                    <div class="w-full h-full bg-black rounded-sm"></div>
+                    <div class="w-full h-full bg-black rounded-sm"></div>
+                    <div class="w-full h-full bg-black rounded-sm"></div>
+                    <div class="w-full h-full bg-black rounded-sm"></div>
+                </a>
+                </div></div>
+                
+                
+            
+             </div>
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+</div>
+<div class="w-[920px] mt-4 h-[1430px] space-y-2">
+    <div class="w-[920px] h-[230px] bg-white flex items-center relative border-2 rounded-md ">
+        <div class="w-[210px]  h-[210px] mt-4 flex ">
+         <img src="./images/redp.png" alt="" class="w-[185px] h-[185px] transform transition-transform duration-200 hover:scale-110">
+        </div>
+        <div class="flex flex-col space-y-2  ">
+            <h1 class="font-medium pb-2 ">Canon Camera EOS 2000, Black 10x zoom</h1>
+            <div class="flex space-x-2">
+            <h1 class="font-bold">$998.00</h1>
+            <h2 class="line-through font-medium text-gray-500">$1128.00</h2>
+        </div>
+        <div class="flex star-rating  items-center">
+            <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="1"></i>
+            <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="2"></i>
+            <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="3"></i>
+            <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="4"></i>
+            <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="5"></i>
+            <h1 class="text-yellow-300 font-medium pl-2">7.5</h1>
+            <ul class="list-disc flex ml-8 space-x-3">
+                <li class="text-gray-500">154 Orders</li>
+                <li class="marker:text-gray-500 text-green-500">Free Shipping</li>
+            </ul>
+        </div>
+        <div class="flex flex-col mt-2">
+            <p class="text-gray-500">Canon Camera EOS 2000 – Black 10x optical zoom, high-resolution <br> imaging for stunning photos.</p>
+            <a href="" class="text-blue-500">View Details</a>
+        </div>
+        </div>
+           <a href=""> <i class="fa-regular fa-heart text-blue-500 border-2 rounded-md w-[40px] transform transition-transform duration-200 hover:scale-110 h-[40px] text-2xl absolute top-5 right-10 items-center flex flex-col"></i></a>
+        </div>
+        <div class="w-[920px] bg-white h-[230px] flex items-center relative border-2 rounded-md">
+            <div class="w-[210px] h-[210px] mt-4 flex">
+             <img src="./images/redp2.png" alt="" class="w-[185px] h-[185px]">
+            </div>
+            <div class="flex flex-col space-y-2  ">
+                <h1 class="font-medium pb-2 ">GoPro HERO6 4K Action Camera - Black</h1>
+                <div class="flex space-x-2">
+                <h1 class="font-bold">$760.00</h1>
+                
+            </div>
+            <div class="flex star-rating  items-center">
+                <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="1"></i>
+                <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="2"></i>
+                <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="3"></i>
+                <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="4"></i>
+                <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="5"></i>
+                <h1 class="text-yellow-300 font-medium pl-2">7.5</h1>
+                <ul class="list-disc flex ml-8 space-x-3">
+                    <li class="text-gray-500">154 Orders</li>
+                    <li class="marker:text-gray-500 text-green-500">Free Shipping</li>
+                </ul>
+            </div>
+            <div class="flex flex-col mt-2">
+                <p class="text-gray-500">GoPro HERO6 4K Action Camera – BlackCapture stunning 4K videos  <br> and waterproof HERO6 Ideal for adventurers.</p>
+                <a href="" class="text-blue-500">View Details</a>
+            </div>
+            </div>
+               <a href=""> <i class="fa-regular fa-heart text-blue-500 border-2 rounded-md w-[40px] transform transition-transform duration-200 hover:scale-110 h-[40px] text-2xl absolute top-5 right-10 items-center flex flex-col"></i></a>
+            </div>
+            <div class="w-[920px] bg-white h-[230px] flex items-center relative border-2 rounded-md ">
+                <div class="w-[210px] h-[210px] mt-4 flex">
+                 <img src="./images/redp3.png" alt=" image" class="w-[185px] h-[185px]">
+                </div>
+                <div class="flex flex-col space-y-2  ">
+                    <h1 class="font-medium pb-2 ">Canon Camera EOS 2000, Black 10x zoom</h1>
+                    <div class="flex space-x-2">
+                    <h1 class="font-bold">$555.00</h1>
+                </div>
+                <div class="flex star-rating  items-center">
+                    <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="1"></i>
+                    <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="2"></i>
+                    <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="3"></i>
+                    <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="4"></i>
+                    <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="5"></i>
+                    <h1 class="text-yellow-300 font-medium pl-2">7.5</h1>
+                    <ul class="list-disc flex ml-8 space-x-3">
+                        <li class="text-gray-500">154 Orders</li>
+                        <li class="marker:text-gray-500 text-green-500">Free Shipping</li>
+                    </ul>
+                </div>
+                <div class="flex flex-col mt-2">
+                    <p class="text-gray-500">Canon Camera EOS 2000 – Black 10x optical zoom, high-resolution <br> imaging for stunning photos.</p>
+                    <a href="" class="text-blue-500">View Details</a>
+                </div>
+                </div>
+                   <a href=""> <i class="fa-regular fa-heart text-blue-500 border-2 rounded-md w-[40px] transform transition-transform duration-200 hover:scale-110 h-[40px] text-2xl absolute top-5 right-10 items-center flex flex-col"></i></a>
+        
+                </div>
+                <div class="w-[920px] h-[230px] bg-white flex items-center relative border-2 rounded-md ">
+                    <div class="w-[210px] h-[210px] mt-4 flex">
+                     <img src="./images/redp4.png" alt="Image" class="w-[185px] h-[185px]">
+                    </div>
+                    <div class="flex flex-col space-y-2  ">
+                        <h1 class="font-medium pb-2 ">Canon Camera EOS 2000, Black 10x zoom</h1>
+                        <div class="flex space-x-2">
+                        <h1 class="font-bold">$1007.00</h1>
+                    </div>
+                    <div class="flex star-rating  items-center">
+                        <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="1"></i>
+                        <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="2"></i>
+                        <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="3"></i>
+                        <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="4"></i>
+                        <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="5"></i>
+                        <h1 class="text-yellow-300 font-medium pl-2">7.5</h1>
+                        <ul class="list-disc flex ml-8 space-x-3">
+                            <li class="text-gray-500">154 Orders</li>
+                            <li class="marker:text-gray-500 text-green-500">Free Shipping</li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-col mt-2">
+                        <p class="text-gray-500">Canon Camera EOS 2000 – Black 10x optical zoom, high-resolution <br> imaging for stunning photos.</p>
+                        <a href="" class="text-blue-500">View Details</a>
+                    </div>
+                    </div>
+                     <a href=""> <i class="fa-regular fa-heart text-blue-500 border-2 rounded-md w-[40px] transform transition-transform duration-200 hover:scale-110 h-[40px] text-2xl absolute top-5 right-10 items-center flex flex-col"></i></a>
+            
+                    </div>
+                    <div class="w-[920px] bg-white h-[230px] flex items-center relative border-2 rounded-md">
+                        <div class="w-[210px] h-[210px] mt-4 flex">
+                         <img src="./images/redpp.png" alt="Image" class="w-[185px] border-none outline-none h-[185px]">
+                        </div>
+                        <div class="flex flex-col space-y-2  ">
+                            <h1 class="font-medium pb-2 ">Canon Camera EOS 2000, Black 10x zoom</h1>
+                            <div class="flex space-x-2">
+                            <h1 class="font-bold">$950.00</h1>
+                            
+                        </div>
+                        <div class="flex star-rating  items-center">
+                            <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="1"></i>
+                            <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="2"></i>
+                            <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="3"></i>
+                            <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="4"></i>
+                            <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="5"></i>
+                            <h1 class="text-yellow-300 font-medium pl-2">7.5</h1>
+                            <ul class="list-disc flex ml-8 space-x-3">
+                                <li class="text-gray-500">154 Orders</li>
+                                <li class="marker:text-gray-500 text-green-500">Free Shipping</li>
+                            </ul>
+                        </div>
+                        <div class="flex flex-col mt-2">
+                            <p class="text-gray-500">Canon Camera EOS 2000 – Black 10x optical zoom, high-resolution <br> imaging for stunning photos.</p>
+                            <a href="" class="text-blue-500">View Details</a>
+                        </div>
+                        </div>
+                           <a href=""> <i class="fa-regular fa-heart text-blue-500 border-2 rounded-md transform transition-transform duration-200 hover:scale-110 w-[40px] h-[40px] text-2xl absolute top-5 right-10 items-center flex flex-col"></i></a>
+                
+                        </div>
+                        <div class="w-[920px] bg-white h-[230px] flex items-center relative border-2 rounded-md ">
+                            <div class="w-[210px] h-[210px] mt-4 flex">
+                             <img src="./images/redp6.png" alt="Image" class="w-[185px] h-[185px] border-none outline-none  ">
+                            </div>
+                            <div class="flex flex-col space-y-2  ">
+                                <h1 class="font-medium pb-2 ">Canon Camera EOS 2000, Black 10x zoom</h1>
+                                <div class="flex space-x-2">
+                                <h1 class="font-bold">$999.00</h1>
+                            </div>
+                            <div class="flex star-rating  items-center">
+                                <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="1"></i>
+                                <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="2"></i>
+                                <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="3"></i>
+                                <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="4"></i>
+                                <i class="fa-regular fa-star cursor-pointer text-yellow-300" data-value="5"></i>
+                                <h1 class="text-yellow-300 font-medium pl-2">7.5</h1>
+                                <ul class="list-disc flex ml-8 space-x-3">
+                                    <li class="text-gray-500">154 Orders</li>
+                                    <li class="marker:text-gray-500 text-green-500">Free Shipping</li>
+                                </ul>
+                            </div>
+                            <div class="flex flex-col bg-white mt-2">
+                                <p class="text-gray-500">Canon Camera EOS 2000 – Black 10x optical zoom, high-resolution <br> imaging for stunning photos.</p>
+                                <a href="" class="text-blue-500">View Details</a>
+                            </div>
+                            </div>
+                               <a href=""> <i class="fa-regular fa-heart text-blue-500 border-2 rounded-md w-[40px] h-[40px] text-2xl absolute top-5 right-10 items-center flex flex-col transform transition-transform duration-200 hover:scale-110"></i></a>
+                            </div>
+</div>
+    </div>
+     </div>
+     <div class="flex justify-end mr-14 gap-2 items-center">
+        
+            <summary class="inline-flex border-2 bg-white w-35 items-center justify-between px-4 py-2 rounded-md font-medium text-black cursor-pointer">
+                Show 10
+                <svg class="size-4 text-gray-800 transition-transform group-open:rotate-180"
+                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m6 9 6 6 6-6"></path>
+                </svg>
+            </summary>
+                <div class="flex justify-center">
+                    <nav class="inline-flex items-center space-x-1 text-gray-700 bg-white p-2 rounded-lg shadow-md">
+                      <a href="#" class="px-3 py-2 text-2xl  transform transition-transform duration-200 hover:scale-110 rounded-l-lg border border-gray-300 hover:bg-gray-100">
+                        &larr;
+                      </a>
+                      <a href="#" class="px-3 py-1 border border-gray-300 hover:bg-gray-100">1</a>
+                      <a href="#" class="px-3 py-1 border border-gray-300 hover:bg-gray-100">2</a>
+                      <a href="#" class="px-3 py-1 border border-gray-300 hover:bg-gray-100">3</a>
+                      <a href="#" class="px-3 py-2 text-2xl  transform transition-transform duration-200 hover:scale-110 rounded-r-lg border border-gray-300 hover:bg-gray-100">
+                        &rarr;
+                      </a>
+                    </nav>
+     </div>
+     </div>
+     <div class="w-full h-[190px] flex flex-col mx-auto  mt-8 items-center bg-gray-100">
+        <div class="w-[617px] mt-8 h-[113px] flex flex-col gap-4 items-center">
+        <div class="flex flex-col items-center">
+          <h1 class="text-2xl font-medium">Subscribe on our newsletter</h1>
+          <p class="text-gray-500">Get daily news on upcoming offers from many suppliers all over the world</p>
+        </div>
+        <div class="flex justify-center gap-x-2 ">
+        <div class="flex items-center relative">
+          <input type="text" placeholder="Email" class="pl-6 bg-white border-2  focus:border-blue-200 focus:ring-1 focus:ring-blue-500
+          placeholder-gray-400 transition w-[274px] h-[40px] rounded-md outline-none">
+          <img src="./images/email.png" alt="" class="absolute pl-0.5">
+        </div>
+        <div class="flex">
+          <button class="border-2 rounded-md w-[110px] h-[42px] text-white bg-blue-700 hover:bg-blue-500">Subscribe</button>
+        </div>
+        </div>
+        </div>
+        </div>
+            <footer class=" w-full h-[280px] bg-white pt-8 ">
+              <div class="m-8 flex border-red-500 justify-between">
+                <div>
+                  <div class="flex items-center">
+                    <img
+                      src="images/logo-symbol@2x.png"
+                      alt="logo"
+                      class="w-[44px] h-[44px]"
+                    />
+                    <h1 class="font-bold text-blue-400 text-2xl pl-2">Brand</h1>
+                  </div>
+                  <p class="mt-4 text-gray-500">
+                    Best information about the company<br />given here.Follow us on
+                  </p>
+                  <div class="flex mt-5 space-x-1">
+                    <a href=""><img src="./images/facebook3.png" alt="logo" /></a>
+                    <a href=""><img src="./images/twitter3.png" alt="logo" /></a>
+                    <a href=""><img src="./images/linkedin3.png" alt="logo" /></a>
+                    <a href=""><img src="./images/instagram3.png" alt="logo" /></a>
+                    <a href=""><img src="./images/youtube3.png" alt="logo" /></a>
+                  </div>
+                </div>
+                <div class="flex space-x-16 p-2 mt-2.5">
+                  <div class="space-y-2">
+                    <div>
+                      <h1 class="text-[18px] font-medium">About</h1>
+                    </div>
+                    <div class="text-gray-500 space-y-1.5">
+                      <a href="" class="block">About Us</a>
+                      <a href="" class="block">Find Store</a>
+                      <a href="" class="block">Categories</a>
+                      <a href="" class="block">Blogs</a>
+                    </div>
+                  </div>
+                  <div class="space-y-2">
+                    <div>
+                      <h1 class="font-medium text-[18px]">Partnership</h1>
+                    </div>
+                    <div class="text-gray-500 space-y-1.5">
+                      <a href="" class="block">About Us</a>
+                      <a href="" class="block">Find Store</a>
+                      <a href="" class="block">Categories</a>
+                      <a href="" class="block">Blogs</a>
+                    </div>
+                  </div>
+                  <div class="space-y-2">
+                    <div>
+                      <h1 class="text-[18px] font-medium">Information</h1>
+                    </div>
+                    <div class="text-gray-500 space-y-1.5">
+                      <a href="" class="block">Help Center</a>
+                      <a href="" class="block">Money Refund</a>
+                      <a href="" class="block">Shipping</a>
+                      <a href="" class="block">Contact Us</a>
+                    </div>
+                  </div>
+                  <div class="space-y-2">
+                    <div>
+                      <h1 class="text-[18px] font-medium">For Users</h1>
+                    </div>
+                    <div class="text-gray-500 space-y-1.5">
+                      <a href="" class="block">Login</a>
+                      <a href="" class="block">Register</a>
+                      <a href="" class="block">Setting</a>
+                      <a href="" class="block">My Oreders</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="mr-10 mt-5">
+                  <div class="space-y-2">
+                    <h1 class="font-medium text-[18px] space-y-1">Get app</h1>
+                    <img src="./images/market-button.png" alt="logo" />
+                    <img src="./images/Group.png" alt="" />
+                  </div>
+                </div>
+              </div>
+            </footer>
+            <div class="bg-gray-100 h-[68px] flex justify-around items-center">
+              <div class="text-gray-500">
+                <p>©2025 Ecommerce</p>
+              </div>
+              <div><img src="./images/Group 986.png" alt="" /></div>
+            </div>
+    <script src="script2.js"></script>
+</body>
+</html>
